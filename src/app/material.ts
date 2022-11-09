@@ -13,11 +13,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatGridListModule } from '@angular/material/grid-list';
 @NgModule({
-  imports: [MatNativeDateModule, MatDatepickerModule, MatIconModule, MatButtonModule, MatPseudoCheckboxModule, MatToolbarModule, FormsModule, MatCardModule, MatFormFieldModule, MatInputModule, MatListModule, MatRadioModule, MatProgressBarModule,],
+  imports: [MatNativeDateModule, MatDatepickerModule, MatIconModule, MatButtonModule, MatPseudoCheckboxModule, MatToolbarModule, FormsModule, MatCardModule, MatFormFieldModule, MatInputModule, MatListModule, MatRadioModule, MatProgressBarModule, MatSnackBarModule, MatGridListModule],
 
   exports: [MatNativeDateModule, FormsModule,
-    MatDatepickerModule, MatIconModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule, MatListModule, MatRadioModule, MatProgressBarModule,],
+    MatDatepickerModule, MatIconModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule, MatListModule, MatRadioModule, MatProgressBarModule, MatSnackBarModule, MatGridListModule],
 
 })
 

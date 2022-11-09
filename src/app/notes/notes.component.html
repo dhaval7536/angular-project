@@ -1,18 +1,23 @@
 <a mat-button routerLink="/add-note">
   <mat-icon>add</mat-icon>
 </a>
-<mat-card class="example-card" *ngFor="let note of notes">
-  <mat-card-actions align="end">
-    <button mat-icon-button aria-label="Edit" (click)="editNote(note._id)">
-      <mat-icon>edit</mat-icon>
-    </button>
-    <span class="example-spacer"></span>
-    <button mat-icon-button color="primary" aria-label="Delete" (click)="deleteNote(note._id)">
-      <mat-icon>delete</mat-icon>
-    </button>
-  </mat-card-actions>
-  <mat-card-title>{{note.title}}</mat-card-title>
-  <mat-card-content>
-    <p>{{note.description}}</p>
-  </mat-card-content>
-</mat-card>
+
+<mat-grid-list cols="4" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let note of notes">
+    <mat-card class="example-card">
+      <mat-card-actions align="end">
+        <button mat-icon-button aria-label="Edit" (click)="editNote(note)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <span class="example-spacer"></span>
+        <button mat-icon-button color="primary" aria-label="Delete" (click)="deleteNote(note._id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+      <mat-card-title>{{note.title}}</mat-card-title>
+      <mat-card-content>
+        <p>{{note.description}}</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

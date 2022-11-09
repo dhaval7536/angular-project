@@ -26,9 +26,9 @@ export class NotesService {
     return this.http.get(api).pipe(catchError(this.handleError));
   }
   // edit note
-  editNote(note: Note): Observable<any> {
-    let api = `${this.endpoint}note`;
-    return this.http.post(api, note).pipe(catchError(this.handleError));
+  editNote(id: number, note: Note): Observable<any> {
+    let api = `${this.endpoint}note/${id}`;
+    return this.http.put(api, note).pipe(catchError(this.handleError));
   }
 
   // delete note
@@ -37,19 +37,6 @@ export class NotesService {
     return this.http.delete(api).pipe(catchError(this.handleError));
   }
 
-  getToken() {
-    return localStorage.getItem('access_token');
-  }
-  get isLoggedIn(): boolean {
-    let authToken = localStorage.getItem('access_token');
-    return authToken !== null ? true : false;
-  }
-  doLogout() {
-    let removeToken = localStorage.removeItem('access_token');
-    if (removeToken == null) {
-      this.router.navigate(['login']);
-    }
-  }
   // Error
   handleError(error: HttpErrorResponse) {
     let msg = '';
